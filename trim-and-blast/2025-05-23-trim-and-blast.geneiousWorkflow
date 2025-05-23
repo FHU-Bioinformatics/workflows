@@ -1,5 +1,6 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="Trim and Blast" author="evandvance" geneiousVersion="2025.1.2" uniqueId="c8660cac-735d-48d2-ac96-f38b9cbe1b5a" revisionNumber="13" description="&lt;html&gt;V: 0.0.3&#xA;May 23 2025&#xA;A workflow to trim and blast a series of sequences. &#xA;&lt;/html&gt;" bundledIconName="publication">
+  <XMLSerialisableRootElement name="Trim and Blast" author="evandvance" geneiousVersion="2025.1.2" uniqueId="8c83f30d-2805-47e1-a431-9dd1a9f2c89c" revisionNumber="20" description="&lt;html&gt;V: 0.0.4&#xA;May 23 2025&#xA;A workflow to trim and blast a series of sequences. &lt;/html&gt;" bundledIconName="publication">
+    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementForEach" />
     <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="true" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">annotate</option>
