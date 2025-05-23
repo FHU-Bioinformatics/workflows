@@ -1,6 +1,6 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="FHU Bioinformatics Test 2" author="evandvance" geneiousVersion="2025.1.2" uniqueId="76079232-9b5f-4fae-9501-7f637c60a098" revisionNumber="7" description="" bundledIconName="publication">
-    <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="false" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="true" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
+  <XMLSerialisableRootElement name="Trim and Blast" author="evandvance" geneiousVersion="2025.1.2" uniqueId="c8660cac-735d-48d2-ac96-f38b9cbe1b5a" revisionNumber="13" description="&lt;html&gt;V: 0.0.3&#xA;May 23 2025&#xA;A workflow to trim and blast a series of sequences. &#xA;&lt;/html&gt;" bundledIconName="publication">
+    <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="true" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">annotate</option>
         <option name="applyToReferencedSequences">false</option>
@@ -16,7 +16,7 @@
         <childOption name="primerTrim">
           <option name="primerScreening">false</option>
           <childOption name="primerTrim">
-            <option name="primers" />
+            <option name="primers"></option>
             <option name="allowMismatches">true</option>
             <option name="maxMismatches">5</option>
             <option name="minLength">5</option>
@@ -54,6 +54,17 @@
         </childOption>
       </Options>
       <optionToExpose optionName="errorProbability.errorProbability" label="Error Probabliltiy Filtering" />
+    </workflowElement>
+    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementSaveAndContinue">
+      <options>
+        <option name="save">true</option>
+        <option name="saveInSubFolder">true</option>
+        <option name="subFolderName">BlastResults/query</option>
+        <option name="addVariable">Include Name...</option>
+        <option name="selectDocuments">false</option>
+        <option name="doWhat">continue</option>
+        <option name="back">2</option>
+      </options>
     </workflowElement>
     <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementGroupSequences" />
     <workflowElement id="sequenceSearch" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement" />
