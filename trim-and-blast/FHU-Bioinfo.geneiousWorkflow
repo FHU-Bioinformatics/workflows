@@ -1,5 +1,5 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="FHU-Bioinfo" author="evandvance" geneiousVersion="2025.1.3" uniqueId="80dd893f-fd37-4770-892c-2e34ed8d0759" revisionNumber="74" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
+  <XMLSerialisableRootElement name="FHU-Bioinfo" author="evandvance" geneiousVersion="2025.1.3" uniqueId="70fec38a-60bb-4411-bdac-4756741095c5" revisionNumber="75" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
     <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">remove</option>
@@ -592,24 +592,19 @@
       </Options>
       <optionToExpose optionName="nucleotideQueryOption.divider_1" label="" />
     </workflowElement>
-    <workflowElement id="Filter_c1279a46-c5c6-4b6f-ae50-3134dad0e10a" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
+    <workflowElement id="FilterOperation" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
-        <option name="divider_1"></option>
-        <childOption name="1">
-          <childOption name="FilterOperation">
-            <option name="filterWhat">eachSequence</option>
-            <option name="match">all</option>
-            <multiOption name="filter">
-              <value>
-                <option name="field">evalue</option>
-                <option name="condition">less_than</option>
-                <option name="value">5</option>
-              </value>
-            </multiOption>
-          </childOption>
-        </childOption>
+        <option name="filterWhat">eachSequence</option>
+        <option name="match">all</option>
+        <multiOption name="filter">
+          <value>
+            <option name="field">evalue</option>
+            <option name="condition">greater_than</option>
+            <option name="value">5</option>
+          </value>
+        </multiOption>
       </Options>
-      <optionToExpose optionName="divider_1" label="" />
+      <optionToExpose optionName="filterWhat" label="" />
     </workflowElement>
     <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementSaveAndContinue">
       <options>
@@ -620,32 +615,6 @@
         <option name="selectDocuments">false</option>
         <option name="doWhat">continue</option>
         <option name="back">2</option>
-      </options>
-    </workflowElement>
-  </XMLSerialisableRootElement>
-  <XMLSerialisableRootElement name="Filter" geneiousVersion="2025.1.3" uniqueId="c1279a46-c5c6-4b6f-ae50-3134dad0e10a" revisionNumber="14" description="&lt;html&gt;&lt;center&gt;Filters sequences or documents that match a given criteria&lt;/center&gt;&lt;/html&gt;" bundledIconName="filter">
-    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementForEach" />
-    <workflowElement id="FilterOperation" exposeNoOptions="false" exposeAllOptions="true" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
-      <Options>
-        <option name="match">all</option>
-        <multiOption name="filter">
-          <option name="field">anyField</option>
-          <option name="condition">contains</option>
-          <option name="value" />
-          <value>
-            <option name="field">sequence_length</option>
-            <option name="condition">greater_than</option>
-            <option name="value">100</option>
-          </value>
-        </multiOption>
-      </Options>
-      <optionToExpose optionName="match" label="" />
-    </workflowElement>
-    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementRename">
-      <options>
-        <option name="prefix">Filtered </option>
-        <option name="middle">2</option>
-        <option name="suffix" />
       </options>
     </workflowElement>
   </XMLSerialisableRootElement>
