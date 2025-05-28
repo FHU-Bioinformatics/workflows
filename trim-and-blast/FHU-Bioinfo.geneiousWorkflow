@@ -1,5 +1,5 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="Trim and Blast" author="evandvance" geneiousVersion="2025.1.3" uniqueId="76f3b67e-b8c6-442b-b08f-6b27d96b8a13" revisionNumber="55" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
+  <XMLSerialisableRootElement name="FHU-Bioinfo" author="evandvance" geneiousVersion="2025.1.3" uniqueId="40fbcaa4-2419-43ae-b1e0-be73169f438a" revisionNumber="60" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
     <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">annotate</option>
@@ -69,55 +69,23 @@
       </Options>
       <optionToExpose optionName="filterWhat" label="" />
     </workflowElement>
-    <workflowElement id="FilterOperation" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
-      <Options>
-        <option name="filterWhat">eachDocument</option>
-        <option name="match">all</option>
-        <multiOption name="filter">
-          <value>
-            <option name="field">filterDocumentTypeField</option>
-            <option name="condition">does_not_contain</option>
-            <option name="value">list</option>
-          </value>
-        </multiOption>
-      </Options>
-      <optionToExpose optionName="filterWhat" label="" />
-    </workflowElement>
-    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementCombineWithEarlierDocuments">
-      <options>
-        <option name="back">1</option>
-      </options>
-    </workflowElement>
-    <workflowElement id="FilterOperation" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
-      <Options>
-        <option name="filterWhat">eachDocument</option>
-        <option name="match">all</option>
-        <multiOption name="filter">
-          <value>
-            <option name="field">number_of_sequences</option>
-            <option name="condition">greater_than</option>
-            <option name="value">1</option>
-          </value>
-        </multiOption>
-      </Options>
-      <optionToExpose optionName="filterWhat" label="" />
-    </workflowElement>
+    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementGroupDocuments" />
     <workflowElement id="com.biomatters.plugins.alignment.AssemblyOperation_Denovo" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="displayForCloningValidation">false</option>
         <option name="assemblerId">Geneious.deNovo</option>
         <option name="assemblerVersion">2025.1.3</option>
-        <option name="assemblyNamePrefixOrFolder">&lt;font color='red'&gt;No Documents&lt;/font&gt; Assembly</option>
+        <option name="assemblyNamePrefixOrFolder">&lt;font color='red'&gt;No Documents&lt;/font&gt; Assembly </option>
         <childOption name="data">
           <option name="reassemble">true</option>
           <option name="useReferenceSequence">false</option>
-          <option name="customComponent1" />
+          <option name="customComponent1"></option>
           <option name="assembleByDocumentFields">false</option>
           <option name="groupAssemblies">false</option>
           <option name="namePart">0</option>
           <option name="nameSeparator" extra="">- (Hyphen)</option>
-          <option name="customComponent2" />
-          <option name="assembleListsSeparately">true</option>
+          <option name="customComponent2"></option>
+          <option name="assembleListsSeparately">false</option>
           <option name="assemblePairsSeparately">false</option>
           <option name="usePartialData">false</option>
           <option name="partialDataPercentageNew">50.0</option>
@@ -125,33 +93,33 @@
         <childOption name="method">
           <childOption name="algorithm">
             <option name="deNovoAssembly">Geneious.deNovo</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="referenceAssembly">dummy</option>
-            <option name="customComponent2" />
-            <option name="customComponent3" />
+            <option name="customComponent2"></option>
+            <option name="customComponent3"></option>
           </childOption>
           <childOption name="biomatters.spades">
             <option name="dnaSource">multiCell</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="method">errorCorrectAndAssemble</option>
             <option name="careful">true</option>
-            <option name="trustedContigs" />
-            <option name="customComponent2" />
-            <option name="untrustedContigs" />
-            <option name="customComponent3" />
+            <option name="trustedContigs"></option>
+            <option name="customComponent2"></option>
+            <option name="untrustedContigs"></option>
+            <option name="customComponent3"></option>
             <option name="overrideKmer">false</option>
             <option name="kmers">21,33,55</option>
             <option name="overrideThreads">false</option>
             <option name="numberOfThreads">14</option>
             <option name="maxMemory">22</option>
-            <option name="additionalOptions" />
-            <option name="customComponent4" />
+            <option name="additionalOptions"></option>
+            <option name="customComponent4"></option>
           </childOption>
           <childOption name="Geneious.deNovo">
             <option name="sensitivity">highest</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="fineTune">iterate_5</option>
-            <option name="customComponent2" />
+            <option name="customComponent2"></option>
             <option name="memoryVsSpeed">5</option>
             <option name="expansionWordLength">10</option>
             <option name="indexWordLength">10</option>
@@ -185,21 +153,21 @@
           </childOption>
           <childOption name="Tadpole">
             <option name="kmer">31</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="doPairedReadOverlap">false</option>
             <option name="pairedReadOverlap">mergePairedReads</option>
             <option name="minimumContigLength">200</option>
             <option name="minimumCoverage">1</option>
             <option name="minimumExtension">1</option>
             <option name="memoryToAllocate">21000</option>
-            <option name="additionalOptions" />
-            <option name="customComponent2" />
+            <option name="additionalOptions"></option>
+            <option name="customComponent2"></option>
           </childOption>
         </childOption>
         <childOption name="trimOptions">
           <option name="method">useExistingTrims</option>
           <option name="trimOptionsButton">Options</option>
-          <option name="customComponent1" />
+          <option name="customComponent1"></option>
           <childOption name="trimOptions">
             <option name="action">annotate</option>
             <childOption name="vectorTrim">
@@ -214,7 +182,7 @@
             <childOption name="primerTrim">
               <option name="primerScreening">false</option>
               <childOption name="primerTrim">
-                <option name="primers" />
+                <option name="primers"></option>
                 <option name="allowMismatches">true</option>
                 <option name="maxMismatches">5</option>
                 <option name="minLength">5</option>
@@ -258,24 +226,24 @@
           <option name="nameReference">{Reads Name} assembled to {Reference Name}</option>
           <option name="addNameVariableReference">...</option>
           <option name="saveReport">false</option>
-          <option name="customComponent1" />
+          <option name="customComponent1"></option>
           <option name="saveUnusedReads">false</option>
-          <option name="customComponent2" />
-          <option name="resultsInSubfolder">true</option>
-          <option name="customComponent3" />
+          <option name="customComponent2"></option>
+          <option name="resultsInSubfolder">false</option>
+          <option name="customComponent3"></option>
           <option name="generateContigs">false</option>
           <option name="limitGeneratedContigs">true</option>
           <option name="generatedContigsLimit">1000</option>
           <option name="saveConsensusSequencesAsList">true</option>
-          <option name="customComponent4" />
+          <option name="customComponent4"></option>
           <option name="generateConsensusSequencesReference">false</option>
           <option name="consensusOptionsButtonReference">Options</option>
-          <option name="customComponent5" />
-          <option name="customComponent6" />
+          <option name="customComponent5"></option>
+          <option name="customComponent6"></option>
           <option name="generateConsensusSequencesDeNovo">true</option>
           <option name="consensusOptionsButtonDeNovo">Options</option>
-          <option name="customComponent7" />
-          <option name="customComponent8" />
+          <option name="customComponent7"></option>
+          <option name="customComponent8"></option>
           <childOption name="consensus">
             <option name="consensusSource">generateFromContig</option>
             <childOption name="consensusOptionsReference">
@@ -295,7 +263,7 @@
               <option name="noConsensusEndGaps">true</option>
               <option name="trimToReference">false</option>
               <option name="ignoreReadsMappedToMultipleLocations">false</option>
-              <option name="callWhenGapInBestStates" />
+              <option name="callWhenGapInBestStates"></option>
               <option name="callChromatogramHeterozygotes">true</option>
               <option name="chromatogramHeterozygotePercentage">50</option>
               <option name="howToStoreSequences">AskUser</option>
@@ -317,7 +285,7 @@
               <option name="noConsensusEndGaps">true</option>
               <option name="trimToReference">false</option>
               <option name="ignoreReadsMappedToMultipleLocations">false</option>
-              <option name="callWhenGapInBestStates" />
+              <option name="callWhenGapInBestStates"></option>
               <option name="callChromatogramHeterozygotes">true</option>
               <option name="chromatogramHeterozygotePercentage">50</option>
               <option name="howToStoreSequences">AskUser</option>
@@ -326,11 +294,6 @@
         </childOption>
       </Options>
       <optionToExpose optionName="displayForCloningValidation" label="" />
-    </workflowElement>
-    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementCombineWithEarlierDocuments">
-      <options>
-        <option name="back">3</option>
-      </options>
     </workflowElement>
     <workflowElement forEachSequenceInsteadOfDocument="true" type="com.biomatters.plugins.workflows.WorkflowElementForEach" />
     <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementSaveAndContinue">
@@ -345,7 +308,7 @@
       </options>
     </workflowElement>
     <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementGroupDocuments" />
-    <workflowElement id="sequenceSearch" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
+    <workflowElement id="sequenceSearch" exposeNoOptions="false" exposeAllOptions="true" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="tabbedQueryTypeChooser">nucleotideQueryOption</option>
         <childOption name="nucleotideQueryOption">
@@ -615,34 +578,9 @@
       </Options>
       <optionToExpose optionName="nucleotideQueryOption.divider_1" label="" />
     </workflowElement>
-    <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementSaveAndContinue">
-      <options>
-        <option name="save">true</option>
-        <option name="saveInSubFolder">true</option>
-        <option name="subFolderName">BlastResults/BlastOutput</option>
-        <option name="addVariable">Include Name...</option>
-        <option name="selectDocuments">false</option>
-        <option name="doWhat">continue</option>
-        <option name="back">2</option>
-      </options>
-    </workflowElement>
-    <workflowElement id="FilterOperation" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
+    <workflowElement id="Filter_3f4bab47-a43f-4951-b0e0-852caa5eb285" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
-        <option name="filterWhat">eachSequence</option>
-        <option name="match">all</option>
-        <multiOption name="filter">
-          <value>
-            <option name="field">anyField</option>
-            <option name="condition">is</option>
-            <option name="value">Hit</option>
-          </value>
-        </multiOption>
-      </Options>
-      <optionToExpose optionName="filterWhat" label="" />
-    </workflowElement>
-    <workflowElement id="Filter_b4f11b25-6b1f-4497-ac2d-dce1c8627446" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
-      <Options>
-        <option name="divider_1" />
+        <option name="divider_1"></option>
         <childOption name="1">
           <childOption name="FilterOperation">
             <option name="filterWhat">eachSequence</option>
@@ -650,7 +588,7 @@
             <multiOption name="filter">
               <value>
                 <option name="field">evalue</option>
-                <option name="condition">greater_than</option>
+                <option name="condition">less_than</option>
                 <option name="value">5</option>
               </value>
             </multiOption>
@@ -671,7 +609,7 @@
       </options>
     </workflowElement>
   </XMLSerialisableRootElement>
-  <XMLSerialisableRootElement name="Filter" geneiousVersion="2025.1.3" uniqueId="b4f11b25-6b1f-4497-ac2d-dce1c8627446" revisionNumber="14" description="&lt;html&gt;&lt;center&gt;Filters sequences or documents that match a given criteria&lt;/center&gt;&lt;/html&gt;" bundledIconName="filter">
+  <XMLSerialisableRootElement name="Filter" geneiousVersion="2025.1.3" uniqueId="3f4bab47-a43f-4951-b0e0-852caa5eb285" revisionNumber="14" description="&lt;html&gt;&lt;center&gt;Filters sequences or documents that match a given criteria&lt;/center&gt;&lt;/html&gt;" bundledIconName="filter">
     <workflowElement type="com.biomatters.plugins.workflows.WorkflowElementForEach" />
     <workflowElement id="FilterOperation" exposeNoOptions="false" exposeAllOptions="true" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
