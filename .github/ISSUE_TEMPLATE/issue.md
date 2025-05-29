@@ -2,7 +2,7 @@
 
 This is a description of the issue.
 
-# Target Goals
+# Acceptance Criteria
 
 - [x] Goal 1
 - [ ] Goal 2
