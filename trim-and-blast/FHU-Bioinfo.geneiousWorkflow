@@ -1,5 +1,5 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="FHU-Bioinfo" author="evandvance,JdotTdot,BraydenSmith" geneiousVersion="2025.1.3" uniqueId="9771c1a5-b228-4ba9-8adf-4cdb940bf4d8" revisionNumber="113" shared="true" wasEverShared="true" description="&lt;html&gt;V: 0.0.6&#xA;A one blast workflow that gives us what we assembled, what our results that had organism were, and what we used in the blast search all in three separate folders&#xA; &lt;/html&gt;" bundledIconName="assembly">
+  <XMLSerialisableRootElement name="FHU-Bioinfo" author="evandvance,JdotTdot,BraydenSmith" geneiousVersion="2025.1.3" uniqueId="336c2028-5a52-45d7-9c90-fa62ed5be867" revisionNumber="116" shared="true" wasEverShared="true" description="&lt;html&gt;V: 0.0.6&#xA;A one blast workflow that gives us what we assembled (Assembly); what our results that had organism were (Hits); and what we used in the blast search all in three separate folders (Query).&#xA; &lt;/html&gt;" bundledIconName="assembly">
     <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">annotate</option>
@@ -75,16 +75,16 @@
         <option name="displayForCloningValidation">false</option>
         <option name="assemblerId">Geneious.deNovo</option>
         <option name="assemblerVersion">2025.1.3</option>
-        <option name="assemblyNamePrefixOrFolder">&lt;font color='red'&gt;No Documents&lt;/font&gt; Assembly</option>
+        <option name="assemblyNamePrefixOrFolder">Assembly</option>
         <childOption name="data">
           <option name="reassemble">true</option>
           <option name="useReferenceSequence">false</option>
-          <option name="customComponent1" />
+          <option name="customComponent1"></option>
           <option name="assembleByDocumentFields">false</option>
           <option name="groupAssemblies">false</option>
           <option name="namePart">0</option>
           <option name="nameSeparator" extra="">- (Hyphen)</option>
-          <option name="customComponent2" />
+          <option name="customComponent2"></option>
           <option name="assembleListsSeparately">false</option>
           <option name="assemblePairsSeparately">false</option>
           <option name="usePartialData">false</option>
@@ -93,33 +93,33 @@
         <childOption name="method">
           <childOption name="algorithm">
             <option name="deNovoAssembly">Geneious.deNovo</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="referenceAssembly">dummy</option>
-            <option name="customComponent2" />
-            <option name="customComponent3" />
+            <option name="customComponent2"></option>
+            <option name="customComponent3"></option>
           </childOption>
           <childOption name="biomatters.spades">
             <option name="dnaSource">multiCell</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="method">errorCorrectAndAssemble</option>
             <option name="careful">true</option>
-            <option name="trustedContigs" />
-            <option name="customComponent2" />
-            <option name="untrustedContigs" />
-            <option name="customComponent3" />
+            <option name="trustedContigs"></option>
+            <option name="customComponent2"></option>
+            <option name="untrustedContigs"></option>
+            <option name="customComponent3"></option>
             <option name="overrideKmer">false</option>
             <option name="kmers">21,33,55</option>
             <option name="overrideThreads">false</option>
             <option name="numberOfThreads">14</option>
             <option name="maxMemory">22</option>
-            <option name="additionalOptions" />
-            <option name="customComponent4" />
+            <option name="additionalOptions"></option>
+            <option name="customComponent4"></option>
           </childOption>
           <childOption name="Geneious.deNovo">
             <option name="sensitivity">medium</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="fineTune">iterate_5</option>
-            <option name="customComponent2" />
+            <option name="customComponent2"></option>
             <option name="memoryVsSpeed">5</option>
             <option name="expansionWordLength">14</option>
             <option name="indexWordLength">12</option>
@@ -153,21 +153,21 @@
           </childOption>
           <childOption name="Tadpole">
             <option name="kmer">31</option>
-            <option name="customComponent1" />
+            <option name="customComponent1"></option>
             <option name="doPairedReadOverlap">false</option>
             <option name="pairedReadOverlap">mergePairedReads</option>
             <option name="minimumContigLength">200</option>
             <option name="minimumCoverage">1</option>
             <option name="minimumExtension">1</option>
             <option name="memoryToAllocate">21000</option>
-            <option name="additionalOptions" />
-            <option name="customComponent2" />
+            <option name="additionalOptions"></option>
+            <option name="customComponent2"></option>
           </childOption>
         </childOption>
         <childOption name="trimOptions">
           <option name="method">useExistingRemove</option>
           <option name="trimOptionsButton">Options</option>
-          <option name="customComponent1" />
+          <option name="customComponent1"></option>
           <childOption name="trimOptions">
             <option name="action">annotate</option>
             <childOption name="vectorTrim">
@@ -182,7 +182,7 @@
             <childOption name="primerTrim">
               <option name="primerScreening">false</option>
               <childOption name="primerTrim">
-                <option name="primers" />
+                <option name="primers"></option>
                 <option name="allowMismatches">true</option>
                 <option name="maxMismatches">5</option>
                 <option name="minLength">5</option>
@@ -221,29 +221,29 @@
           </childOption>
         </childOption>
         <childOption name="results">
-          <option name="nameDeNovo">{Reads Name} Assembly</option>
+          <option name="nameDeNovo">Assembly</option>
           <option name="addNameVariableDeNovo">...</option>
           <option name="nameReference">{Reads Name} assembled to {Reference Name}</option>
           <option name="addNameVariableReference">...</option>
           <option name="saveReport">false</option>
-          <option name="customComponent1" />
+          <option name="customComponent1"></option>
           <option name="saveUnusedReads">true</option>
-          <option name="customComponent2" />
+          <option name="customComponent2"></option>
           <option name="resultsInSubfolder">true</option>
-          <option name="customComponent3" />
+          <option name="customComponent3"></option>
           <option name="generateContigs">true</option>
           <option name="limitGeneratedContigs">true</option>
           <option name="generatedContigsLimit">1000</option>
           <option name="saveConsensusSequencesAsList">true</option>
-          <option name="customComponent4" />
+          <option name="customComponent4"></option>
           <option name="generateConsensusSequencesReference">false</option>
           <option name="consensusOptionsButtonReference">Options</option>
-          <option name="customComponent5" />
-          <option name="customComponent6" />
+          <option name="customComponent5"></option>
+          <option name="customComponent6"></option>
           <option name="generateConsensusSequencesDeNovo">true</option>
           <option name="consensusOptionsButtonDeNovo">Options</option>
-          <option name="customComponent7" />
-          <option name="customComponent8" />
+          <option name="customComponent7"></option>
+          <option name="customComponent8"></option>
           <childOption name="consensus">
             <option name="consensusSource">generateFromContig</option>
             <childOption name="consensusOptionsReference">
@@ -263,7 +263,7 @@
               <option name="noConsensusEndGaps">true</option>
               <option name="trimToReference">false</option>
               <option name="ignoreReadsMappedToMultipleLocations">false</option>
-              <option name="callWhenGapInBestStates" />
+              <option name="callWhenGapInBestStates"></option>
               <option name="callChromatogramHeterozygotes">true</option>
               <option name="chromatogramHeterozygotePercentage">50</option>
               <option name="howToStoreSequences">AskUser</option>
@@ -285,7 +285,7 @@
               <option name="noConsensusEndGaps">true</option>
               <option name="trimToReference">false</option>
               <option name="ignoreReadsMappedToMultipleLocations">false</option>
-              <option name="callWhenGapInBestStates" />
+              <option name="callWhenGapInBestStates"></option>
               <option name="callChromatogramHeterozygotes">true</option>
               <option name="chromatogramHeterozygotePercentage">50</option>
               <option name="howToStoreSequences">AskUser</option>
@@ -314,7 +314,7 @@
       <options>
         <option name="save">true</option>
         <option name="saveInSubFolder">true</option>
-        <option name="subFolderName">BlastResults/query</option>
+        <option name="subFolderName">Query</option>
         <option name="addVariable">Include Name...</option>
         <option name="selectDocuments">false</option>
         <option name="doWhat">continue</option>
@@ -596,7 +596,7 @@
       <options>
         <option name="save">true</option>
         <option name="saveInSubFolder">true</option>
-        <option name="subFolderName">BlastResults</option>
+        <option name="subFolderName">Hits</option>
         <option name="addVariable">Include Name...</option>
         <option name="selectDocuments">false</option>
         <option name="doWhat">continue</option>
