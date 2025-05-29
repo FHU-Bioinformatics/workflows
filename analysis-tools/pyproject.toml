@@ -1,0 +1,10 @@
+[project]
+name = "analysis-tools"
+version = "0.1.0"
+description = "A jupyter notebook analysis tool to automate the data analysis process for the FHU Bioinformatics team."
+readme = "workflows/README.md"
+requires-python = ">=3.12"
+dependencies = ["pandas>=2.2.3"]
+
+[dependency-groups]
+dev = ["ipykernel>=6.29.5"]
