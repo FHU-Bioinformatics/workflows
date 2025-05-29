@@ -1,5 +1,5 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="FHU-Bioinfo-DoubleBlast" author="evandvance" geneiousVersion="2025.1.3" uniqueId="9c8b6357-8af5-4314-85b5-d8f3f10b66dc" revisionNumber="93" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
+  <XMLSerialisableRootElement name="FHU-Bioinfo-DoubleBlast" author="evandvance" geneiousVersion="2025.1.3" uniqueId="06ed8e77-1bc3-45c0-b655-e7c1d6bc0ef0" revisionNumber="93" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
     <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">remove</option>
@@ -326,25 +326,25 @@
       <Options>
         <option name="tabbedQueryTypeChooser">nucleotideQueryOption</option>
         <childOption name="nucleotideQueryOption">
-          <option name="divider_1"></option>
+          <option name="divider_1" />
           <option name="database">NCBI_core_nt.nt</option>
           <option name="addRemoveDatabases">Add/Remove</option>
-          <option name="customComponent1"></option>
+          <option name="customComponent1" />
           <option name="program">Megablast</option>
           <option name="typeOfSearchCombo">filterOnHavingHits</option>
-          <option name="customComponent2"></option>
+          <option name="customComponent2" />
           <option name="whatToRetrieve">matchingRegion</option>
           <option name="extendedRegionSize">100</option>
           <option name="maxHits">1</option>
           <option name="searchName">BLAST</option>
-          <option name="divider_2"></option>
+          <option name="divider_2" />
           <option name="truncateAnnotationsInQueryCentricView">true</option>
           <option name="showMessageOnNoResults">true</option>
           <childOption name="queryInputMethod">
             <option name="queryInputMethod">use nucleotide</option>
           </childOption>
           <childOption name="manualQuery">
-            <option name="manuallySpecifiedQuery"></option>
+            <option name="manuallySpecifiedQuery" />
             <option name="queryAlphabet">nucleotide</option>
             <childOption name="subsequence">
               <option name="useSubsequence">false</option>
@@ -366,8 +366,8 @@
             <option name="ALIGNMENTS">100</option>
             <option name="TEMPLATE_LENGTH">18</option>
             <option name="TEMPLATE_TYPE">Coding</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastp">
             <option name="maxHits">100</option>
@@ -380,9 +380,9 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
-            <option name="PHI_PATTERN"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
+            <option name="PHI_PATTERN" />
           </childOption>
           <childOption name="NCBI_BLAST_blastn">
             <option name="ALGORITHM">&lt;html&gt;Moderate similarity (&lt;b&gt;Standard blastn&lt;/b&gt;, &lt;i&gt;slower but more sensitive&lt;/i&gt;)&lt;/html&gt; </option>
@@ -396,8 +396,8 @@
             <option name="GAPCOSTS">5 2</option>
             <option name="NUCLEOTIDE_SCORING">2 -3</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastx">
             <option name="maxHits">100</option>
@@ -409,8 +409,8 @@
             <option name="MATRIX_NAME">BLOSUM62</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastx">
             <option name="maxHits">100</option>
@@ -424,8 +424,8 @@
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastn">
             <option name="maxHits">100</option>
@@ -438,8 +438,8 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_Megablast">
             <option name="ALGORITHM">&lt;html&gt;High similarity (&lt;b&gt;Megablast&lt;/b&gt;, &lt;i&gt;very fast, only finds similar sequences&lt;/i&gt;)&lt;/html&gt;</option>
@@ -453,30 +453,30 @@
             <option name="GAPCOSTS">linear</option>
             <option name="NUCLEOTIDE_SCORING">1 -2</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
         </childOption>
         <childOption name="proteinQueryOption">
-          <option name="divider_1"></option>
+          <option name="divider_1" />
           <option name="database">NCBI_core_nt.nt</option>
           <option name="addRemoveDatabases">Add/Remove</option>
-          <option name="customComponent1"></option>
+          <option name="customComponent1" />
           <option name="program">blastp</option>
           <option name="typeOfSearchCombo">standardSearchOptionValue</option>
-          <option name="customComponent2"></option>
+          <option name="customComponent2" />
           <option name="whatToRetrieve">matchingRegion</option>
           <option name="extendedRegionSize">100</option>
           <option name="maxHits">10</option>
           <option name="searchName">BLAST</option>
-          <option name="divider_2"></option>
+          <option name="divider_2" />
           <option name="truncateAnnotationsInQueryCentricView">true</option>
           <option name="showMessageOnNoResults">true</option>
           <childOption name="queryInputMethod">
             <option name="queryInputMethod">use protein</option>
           </childOption>
           <childOption name="manualQuery">
-            <option name="manuallySpecifiedQuery"></option>
+            <option name="manuallySpecifiedQuery" />
             <option name="queryAlphabet">nucleotide</option>
             <childOption name="subsequence">
               <option name="useSubsequence">false</option>
@@ -498,8 +498,8 @@
             <option name="ALIGNMENTS">100</option>
             <option name="TEMPLATE_LENGTH">18</option>
             <option name="TEMPLATE_TYPE">Coding</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastp">
             <option name="maxHits">100</option>
@@ -512,9 +512,9 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
-            <option name="PHI_PATTERN"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
+            <option name="PHI_PATTERN" />
           </childOption>
           <childOption name="NCBI_BLAST_blastn">
             <option name="ALGORITHM">&lt;html&gt;Moderate similarity (&lt;b&gt;Standard blastn&lt;/b&gt;, &lt;i&gt;slower but more sensitive&lt;/i&gt;)&lt;/html&gt; </option>
@@ -528,8 +528,8 @@
             <option name="GAPCOSTS">5 2</option>
             <option name="NUCLEOTIDE_SCORING">2 -3</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastx">
             <option name="maxHits">100</option>
@@ -541,8 +541,8 @@
             <option name="MATRIX_NAME">BLOSUM62</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastx">
             <option name="maxHits">100</option>
@@ -556,8 +556,8 @@
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastn">
             <option name="maxHits">100</option>
@@ -570,8 +570,8 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_Megablast">
             <option name="ALGORITHM">&lt;html&gt;High similarity (&lt;b&gt;Megablast&lt;/b&gt;, &lt;i&gt;very fast, only finds similar sequences&lt;/i&gt;)&lt;/html&gt;</option>
@@ -585,8 +585,8 @@
             <option name="GAPCOSTS">linear</option>
             <option name="NUCLEOTIDE_SCORING">1 -2</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
         </childOption>
       </Options>
@@ -621,25 +621,25 @@
       <Options>
         <option name="tabbedQueryTypeChooser">nucleotideQueryOption</option>
         <childOption name="nucleotideQueryOption">
-          <option name="divider_1"></option>
+          <option name="divider_1" />
           <option name="database">NCBI_core_nt.nt</option>
           <option name="addRemoveDatabases">Add/Remove</option>
-          <option name="customComponent1"></option>
+          <option name="customComponent1" />
           <option name="program">Megablast</option>
           <option name="typeOfSearchCombo">standardSearchOptionValue</option>
-          <option name="customComponent2"></option>
+          <option name="customComponent2" />
           <option name="whatToRetrieve">matchingRegion</option>
           <option name="extendedRegionSize">100</option>
           <option name="maxHits">1</option>
           <option name="searchName">BLAST</option>
-          <option name="divider_2"></option>
+          <option name="divider_2" />
           <option name="truncateAnnotationsInQueryCentricView">true</option>
           <option name="showMessageOnNoResults">true</option>
           <childOption name="queryInputMethod">
             <option name="queryInputMethod">use nucleotide</option>
           </childOption>
           <childOption name="manualQuery">
-            <option name="manuallySpecifiedQuery"></option>
+            <option name="manuallySpecifiedQuery" />
             <option name="queryAlphabet">nucleotide</option>
             <childOption name="subsequence">
               <option name="useSubsequence">false</option>
@@ -661,8 +661,8 @@
             <option name="ALIGNMENTS">100</option>
             <option name="TEMPLATE_LENGTH">18</option>
             <option name="TEMPLATE_TYPE">Coding</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastp">
             <option name="maxHits">100</option>
@@ -675,9 +675,9 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
-            <option name="PHI_PATTERN"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
+            <option name="PHI_PATTERN" />
           </childOption>
           <childOption name="NCBI_BLAST_blastn">
             <option name="ALGORITHM">&lt;html&gt;Moderate similarity (&lt;b&gt;Standard blastn&lt;/b&gt;, &lt;i&gt;slower but more sensitive&lt;/i&gt;)&lt;/html&gt; </option>
@@ -691,8 +691,8 @@
             <option name="GAPCOSTS">5 2</option>
             <option name="NUCLEOTIDE_SCORING">2 -3</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastx">
             <option name="maxHits">100</option>
@@ -704,8 +704,8 @@
             <option name="MATRIX_NAME">BLOSUM62</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastx">
             <option name="maxHits">100</option>
@@ -719,8 +719,8 @@
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastn">
             <option name="maxHits">100</option>
@@ -733,8 +733,8 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_Megablast">
             <option name="ALGORITHM">&lt;html&gt;High similarity (&lt;b&gt;Megablast&lt;/b&gt;, &lt;i&gt;very fast, only finds similar sequences&lt;/i&gt;)&lt;/html&gt;</option>
@@ -748,30 +748,30 @@
             <option name="GAPCOSTS">linear</option>
             <option name="NUCLEOTIDE_SCORING">1 -2</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
         </childOption>
         <childOption name="proteinQueryOption">
-          <option name="divider_1"></option>
+          <option name="divider_1" />
           <option name="database">NCBI_core_nt.nt</option>
           <option name="addRemoveDatabases">Add/Remove</option>
-          <option name="customComponent1"></option>
+          <option name="customComponent1" />
           <option name="program">blastp</option>
           <option name="typeOfSearchCombo">standardSearchOptionValue</option>
-          <option name="customComponent2"></option>
+          <option name="customComponent2" />
           <option name="whatToRetrieve">matchingRegion</option>
           <option name="extendedRegionSize">100</option>
           <option name="maxHits">1</option>
           <option name="searchName">BLAST</option>
-          <option name="divider_2"></option>
+          <option name="divider_2" />
           <option name="truncateAnnotationsInQueryCentricView">true</option>
           <option name="showMessageOnNoResults">true</option>
           <childOption name="queryInputMethod">
             <option name="queryInputMethod">use protein</option>
           </childOption>
           <childOption name="manualQuery">
-            <option name="manuallySpecifiedQuery"></option>
+            <option name="manuallySpecifiedQuery" />
             <option name="queryAlphabet">nucleotide</option>
             <childOption name="subsequence">
               <option name="useSubsequence">false</option>
@@ -793,8 +793,8 @@
             <option name="ALIGNMENTS">100</option>
             <option name="TEMPLATE_LENGTH">18</option>
             <option name="TEMPLATE_TYPE">Coding</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastp">
             <option name="maxHits">100</option>
@@ -807,9 +807,9 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
-            <option name="PHI_PATTERN"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
+            <option name="PHI_PATTERN" />
           </childOption>
           <childOption name="NCBI_BLAST_blastn">
             <option name="ALGORITHM">&lt;html&gt;Moderate similarity (&lt;b&gt;Standard blastn&lt;/b&gt;, &lt;i&gt;slower but more sensitive&lt;/i&gt;)&lt;/html&gt; </option>
@@ -823,8 +823,8 @@
             <option name="GAPCOSTS">5 2</option>
             <option name="NUCLEOTIDE_SCORING">2 -3</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastx">
             <option name="maxHits">100</option>
@@ -836,8 +836,8 @@
             <option name="MATRIX_NAME">BLOSUM62</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_blastx">
             <option name="maxHits">100</option>
@@ -851,8 +851,8 @@
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
             <option name="GENETIC_CODE">Standard</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_tblastn">
             <option name="maxHits">100</option>
@@ -865,8 +865,8 @@
             <option name="COMPOSITION_BASED_STATISTICS">Conditional compositional score matrix adjustment</option>
             <option name="GAPCOSTS">11 1</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
           <childOption name="NCBI_BLAST_Megablast">
             <option name="ALGORITHM">&lt;html&gt;High similarity (&lt;b&gt;Megablast&lt;/b&gt;, &lt;i&gt;very fast, only finds similar sequences&lt;/i&gt;)&lt;/html&gt;</option>
@@ -880,8 +880,8 @@
             <option name="GAPCOSTS">linear</option>
             <option name="NUCLEOTIDE_SCORING">1 -2</option>
             <option name="ALIGNMENTS">100</option>
-            <option name="ENTREZ_QUERY"></option>
-            <option name="OTHER_ADVANCED"></option>
+            <option name="ENTREZ_QUERY" />
+            <option name="OTHER_ADVANCED" />
           </childOption>
         </childOption>
       </Options>
