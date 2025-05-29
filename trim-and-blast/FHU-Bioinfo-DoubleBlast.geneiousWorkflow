@@ -1,5 +1,5 @@
 <geneiousWorkflows>
-  <XMLSerialisableRootElement name="FHU-Bioinfo-DoubleBlast" author="evandvance, JdotTdot, & BraydenSmith" geneiousVersion="2025.1.3" uniqueId="06ed8e77-1bc3-45c0-b655-e7c1d6bc0ef0" revisionNumber="93" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
+  <XMLSerialisableRootElement name="FHU-Bioinfo-DoubleBlast" author="evandvance,JdotTdot,BraydenSmith" geneiousVersion="2025.1.3" uniqueId="1722c61f-7146-42b2-97fb-68db6aff9b1f" revisionNumber="94" sharedToCloud="true" wasEverSharedToCloud="true" description="&lt;html&gt;V: 0.0.6&#xA;May 28 2025&#xA; &lt;/html&gt;" bundledIconName="publication">
     <workflowElement id="Operation_com.biomatters.plugins.alignment.TrimAnnotationGenerator" exposeNoOptions="true" exposeAllOptions="false" suppressErrors="false" showButtonForExposedGroup="false" groupNameForExposedOptions="" type="com.biomatters.plugins.workflows.DocumentOperationWorkflowElement">
       <Options>
         <option name="action">remove</option>
