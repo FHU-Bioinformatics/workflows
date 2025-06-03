@@ -15,7 +15,8 @@ def run_workflow(input_path, workflow_path, output_path):
                 "geneious",
                 "--run-workflow", str(workflow_path),
                 "--input", str(barcode_directory),
-                "--output", str(output_path / barcode_directory.name)
+                "--output", f"{output_path}/{barcode_directory.name}",
+                "--export-csv" 
             ]
 
             subprocess.run(command, check=True)
