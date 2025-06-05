@@ -9,27 +9,35 @@ def run_workflow(input_path, workflow_path, output_path):
 
     for barcode_directory in input_path.iterdir():
         if barcode_directory.is_dir():
-            print(f"Running workflow on {barcode_directory.name}")
+            fastq_files = list(barcode_directory.glob("*.fastq.gz"))
 
-            command = [
-                "geneious",
-                "--run-workflow", str(workflow_path),
-                "--input", str(barcode_directory),
-                "--output", f"{output_path}/{barcode_directory.name}",
-                "--export-csv" 
-            ]
+            for fastq_file in fastq_files:
+                print(f"Running workflow on {fastq_file.name}")
 
-            subprocess.run(command, check=True)
+                command = [
+
+                    "geneious",
+                    "-w", str(workflow_path),
+                    "-i", str(fastq_file),
+                    "-o", f"{output_path}/{barcode_directory.name}.csv",
+                    #"--export-csv"
+                ]
+
+                subprocess.run(command, check=True)
 
 
 def main():
     parser = argparse.ArgumentParser(prog="Script to run a Geneious workflow on all barcodes in a dataset")
-    parser.add_argument("input_path", help="Path to dataset")
-    parser.add_argument("workflow_path", help="Path to the workflow file")
-    parser.add_argument("output_path", help="Path to the output directory")
+    parser.add_argument("-i", "--input_path",required=True, help="Path to dataset")
+    parser.add_argument("-w","--workflow_path",required=True, help="Path to the workflow file")
+    parser.add_argument("-o","--output_path", required=True, help="Path to the output directory")
     args = parser.parse_args()
 
     run_workflow(args.input_path, args.workflow_path, args.output_path)
+
+    print(f"Input Path: {args.input_path}")
+    print(f"Workflow Path: {args.workflow}")
+    print(f"Output Path: {args.output}")
 
 if __name__ == '__main__':
     main()
