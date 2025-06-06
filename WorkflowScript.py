@@ -11,19 +11,19 @@ def run_workflow(input_path, workflow_path, output_path):
         if barcode_directory.is_dir():
             fastq_files = list(barcode_directory.glob("*.fastq.gz"))
 
+            print(f"Running workflow on barcode directory: {barcode_directory.name}")
+            
+            command = [
+                "geneious",
+                "-w", str(workflow_path),
+            ]
+
             for fastq_file in fastq_files:
-                print(f"Running workflow on {fastq_file.name}")
+                command.extend(["-i", str(fastq_file)])
+                
+            command.extend(["-o", f"{output_path}/{barcode_directory.name}.csv",])
 
-                command = [
-
-                    "geneious",
-                    "-w", str(workflow_path),
-                    "-i", str(fastq_file),
-                    "-o", f"{output_path}/{barcode_directory.name}.csv",
-                    #"--export-csv"
-                ]
-
-                subprocess.run(command, check=True)
+            subprocess.run(command, check=True)
 
 
 def main():
