@@ -1,7 +1,22 @@
 import argparse
 from pathlib import Path
 import subprocess
+import shutil
 
+def concatenate_fastqs(barcode_folder: Path, combined_output_dir: Path) -> Path:
+    """
+    Concatenate all .fastq.gz files in a barcode folder into one combined file.
+    Returns the path to the combined file.
+    """
+    combined_output_dir.mkdir(parents=True, exist_ok=True)
+    combined_file = combined_output_dir / f"{barcode_folder.name}_combined.fastq.gz"
+
+    with open(combined_file, "wb") as wfp:
+        for fq_file in sorted(barcode_folder.glob("*.fastq.gz")):
+            with open(fq_file, "rb") as rfp:
+                shutil.copyfileobj(rfp, wfp)
+
+    return combined_file
 
 def run_workflow(input_path, workflow_path, output_path):
     input_path = Path(input_path)
@@ -13,17 +28,21 @@ def run_workflow(input_path, workflow_path, output_path):
     subdirectories = [barcode_directory for barcode_directory in input_path.iterdir() if barcode_directory.is_dir()]
    
     for barcode_folder in subdirectories:
-        fastq_files = list(barcode_folder.glob("*.fastq.gz"))
-        for fastq_file in fastq_files:
-            print(f"Running workflow on barcode directory: {barcode_folder.name}")
+        print(f"Running workflow on barcode directory: {barcode_folder.name}")
 
-            command = [
-                "geneious",
-                "-w", str(workflow_path),
-                "-i", str(fastq_file),
-                "-o", str(output_path / barcode_folder.name / f"{fastq_file.name}.csv")  # Output file named after barcode and fastq file
-            ]
-            subprocess.run(command, check=True)
+        combined_path = output_path / "combined_files"
+        combined_fastq = concatenate_fastqs(barcode_folder, combined_path)
+
+        barcode_output_dir = output_path / barcode_folder.name
+        barcode_output_dir.mkdir(parents=True, exist_ok=True)
+            
+        command = [
+            "geneious",
+            "-w", str(workflow_path),
+            "-i", str(combined_fastq),
+            "-o", str(barcode_output_dir / f"{barcode_folder.name}_results.csv")
+        ]
+        subprocess.run(command, check=True)
 
 
 def main():
