@@ -3,20 +3,34 @@ import numpy as np
 import ipywidgets as widgets
 from IPython.display import display, clear_output
 
+
 class OrganismGradeViewer:
-    def __init__(self, clean_hits, organism_percent, useful_cols):
-        self.clean_hits = clean_hits
-        self.organism_percent = organism_percent
-        self.useful_cols = useful_cols
+    def __init__(self, dataframe:pd.DataFrame, unique_column:str, ranking_column:str, useful_cols:list[str], dropna_for_unique:bool=True):
+        self.unique_column_as_series =  dataframe[unique_column].value_counts(normalize=False,dropna=dropna_for_unique)
+        self.unique_column_title = unique_column
+        self.ranking_column_title = ranking_column
+
+        # I can't rank it/group it if the unique_col and ranking_col are not in the dataframe's useful columns
+        if unique_column not in useful_cols:
+            useful_cols.append(unique_column)
+        if ranking_column not in useful_cols:
+            useful_cols.append(ranking_column)
+
+        self.useful_columns = dataframe[useful_cols]
+
+        # Input widgets
+        self._input_widget_builder()
 
         # Output widget
-        self.output_organism = widgets.Output(layout={'border': '1px solid black'})
+        self.output_widget = widgets.Output(layout={'border': '1px solid black'})
 
+
+    def _input_widget_builder(self):
         # Widgets
-        self.organism_dropdown = widgets.Dropdown(
-            options=list(self.organism_percent.index),
-            value=self.organism_percent.index[0],
-            description='Organism:',
+        self.column_pick_input = widgets.Dropdown(
+            options=list(self.unique_column_as_series.index),
+            value=self.unique_percent.index[0],
+            description=f'{self.unique_column_title}:',
             disabled=False,
             continuous_update=False
         )
@@ -24,9 +38,9 @@ class OrganismGradeViewer:
         self.num_results_input = widgets.BoundedIntText(
             value=3,
             min=1,
-            max=len(self.clean_hits),
+            max=self.unique_column_as_series.loc(self.column_pick_input.value),
             step=1,
-            description='Top Grade #:',
+            description=f'Ordered by {self.ranking_column_title}:',
             disabled=False,
             continuous_update=False
         )
@@ -38,39 +52,33 @@ class OrganismGradeViewer:
             continuous_update=False
         )
 
-        # Bind events
-        self.organism_dropdown.observe(self._on_change, names='value')
+    def display(self):
+        # Display inputs
+        self.column_pick_input.observe(self._on_change, names='value')
         self.num_results_input.observe(self._on_change, names='value')
         self.ascending_input.observe(self._on_change, names='value')
-
-        # Initial display
+        # Initial display of outputs
         self._update_output()
-
-    def _show_top_hits(self, organism_name, n_results, ascending):
-        filtered = self.clean_hits[self.clean_hits['Organism'] == organism_name]
-        try:
-            filtered = filtered.copy()
-            filtered['Grade_numeric'] = filtered['Grade'].str.rstrip('%').astype(float)
-            filtered = filtered.sort_values('Grade_numeric', ascending=ascending)
-        except Exception:
-            filtered = filtered.sort_values('Grade', ascending=ascending)
-        display(filtered.loc[:, self.useful_cols].head(n_results))
-
-    def _on_change(self, change):
-        self._update_output()
+        display(self.column_pick_input, self.num_results_input, self.ascending_input, self.output_widget)
 
     def _update_output(self):
-        with self.output_organism:
+        with self.output_widget:
             clear_output()
             self._show_top_hits(
-                self.organism_dropdown.value,
+                self.column_pick_input.value,
                 self.num_results_input.value,
                 self.ascending_input.value
             )
 
-    def display(self):
-        display(self.organism_dropdown, self.num_results_input, self.ascending_input, self.output_organism)
+    def _show_top_hits(self, selected_value, n_results, ascending):
+        filtered = self.useful_columns[self.useful_columns[self.unique_column_title] == selected_value]
+        filtered = filtered.sort_values(self.ranking_column_title, ascending=ascending)
+        display(filtered.loc[:, self.useful_columns].head(n_results))
 
+    def _on_change(self, change):
+        self._update_output()
+
+    
 
 def main():
     pass
