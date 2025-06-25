@@ -4,7 +4,7 @@ import ipywidgets as widgets
 from IPython.display import display, clear_output
 
 
-class OrganismGradeViewer:
+class GroupRankViewer:
     def __init__(self, dataframe:pd.DataFrame, unique_column:str, ranking_column:str, useful_cols:list[str], dropna_for_unique:bool=True):
         self.unique_column_as_series =  dataframe[unique_column].value_counts(normalize=False,dropna=dropna_for_unique)
         self.unique_column_title = unique_column
