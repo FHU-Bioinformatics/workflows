@@ -3,6 +3,7 @@ import numpy as np
 import ipywidgets as widgets
 from IPython.display import display, clear_output
 
+# Look at https://ipywidgets.readthedocs.io/en/7.7.1/examples/Widget%20Basics.html for more info on widgets.
 
 class GroupRankViewer:
     def __init__(self, dataframe:pd.DataFrame, unique_column:str, ranking_column:str, useful_cols:list[str], dropna_for_unique:bool=True):
@@ -29,7 +30,7 @@ class GroupRankViewer:
         # Widgets
         self.column_pick_input = widgets.Dropdown(
             options=list(self.unique_column_as_series.index),
-            value=self.unique_percent.index[0],
+            value=self.unique_column_as_series.index[0],
             description=f'{self.unique_column_title}:',
             disabled=False,
             continuous_update=False
@@ -38,16 +39,18 @@ class GroupRankViewer:
         self.num_results_input = widgets.BoundedIntText(
             value=3,
             min=1,
-            max=self.unique_column_as_series.loc(self.column_pick_input.value),
+            # TODO make working for making the max and resetting the value
+            # (Not super important.)
+            max=self.unique_column_as_series.loc[self.column_pick_input.value],
             step=1,
-            description=f'Ordered by {self.ranking_column_title}:',
+            description='Showing:',
             disabled=False,
             continuous_update=False
         )
 
         self.ascending_input = widgets.Checkbox(
             value=False,
-            description='Ascending Grade Order',
+            description=f'Ascending {self.ranking_column_title} Order',
             disabled=False,
             continuous_update=False
         )
@@ -73,7 +76,7 @@ class GroupRankViewer:
     def _show_top_hits(self, selected_value, n_results, ascending):
         filtered = self.useful_columns[self.useful_columns[self.unique_column_title] == selected_value]
         filtered = filtered.sort_values(self.ranking_column_title, ascending=ascending)
-        display(filtered.loc[:, self.useful_columns].head(n_results))
+        display(filtered.loc[:, self.useful_columns.columns].head(n_results))
 
     def _on_change(self, change):
         self._update_output()
